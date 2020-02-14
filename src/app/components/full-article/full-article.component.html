@@ -1,0 +1,20 @@
+<div *ngIf="isLoading">
+    <mat-spinner></mat-spinner>
+</div>
+
+<div *ngIf="!isLoading">
+    <div *ngIf="cityArticle; then thenBlock; else elseBlock"></div>
+    <ng-template #thenBlock>
+        <div class="card" style="width: 18rem;">
+            <h3>Full detail of article: {{cityArticle.id}}</h3>
+            <img src="" class="card-img-top" [alt]="cityArticle.image">
+            <div class="card-body">
+                <h5 class="card-title">Title is: {{ cityArticle.titre }} </h5>
+                <p class="card-text">Contenu is: {{ cityArticle.contenu }} </p>
+            </div>
+        </div>
+    </ng-template>
+    <ng-template #elseBlock>
+        <h1 class="text-danger"> This article does not existe, hahaha!!!! </h1>
+    </ng-template>
+</div>

@@ -1,0 +1,32 @@
+{
+  "article": [
+    {
+      "titre": "Haha",
+      "contenu": "Haha is great",
+      "image": "no image",
+      "category": "alaune",
+      "id": 1
+    },
+    {
+      "titre": "Hehe",
+      "contenu": "Hehe is great too",
+      "image": "no image",
+      "category": "vielocal",
+      "id": 2
+    },
+    {
+      "titre": "Hihi",
+      "contenu": "Hihi is great three",
+      "image": "no image",
+      "category": "sport",
+      "id": 3
+    },
+    {
+      "id": 4,
+      "titre": "dzedfz editing",
+      "contenu": "dsdfczsfz",
+      "image": "fczesf",
+      "category": "vielocal"
+    }
+  ]
+}

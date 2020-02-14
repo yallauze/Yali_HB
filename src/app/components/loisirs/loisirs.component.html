@@ -1,0 +1,10 @@
+<div class="d-flex justify-content-center" *ngFor="let loisirArticle of loisirArticles">
+    <div class="card " style="width: 18rem;">
+        <img src="" class="card-img-top" [alt]="loisirArticle.image">
+        <div class="card-body">
+            <h5 class="card-title"> {{ loisirArticle.titre| uppercase}} </h5>
+            <p class="card-text"> {{ loisirArticle.contenu }} </p>
+            <p class="card-text"> {{ loisirArticle.category }} </p>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,35 @@
+/* styling for Navbar */
+.navbar,
+.navbar-light{
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 0.1rem;
+    background-color: rgba(0, 0, 0, 0.5) !important;
+}
+.navbar-brand img{
+    height: 2rem;
+    width: 15rem;
+}
+.navbar-nav li{
+    padding-right: 1rem;
+    padding-left: 1rem;
+}
+.navbar-light .navbar-nav .nav-item a{
+    color: orangered;
+    background-color: transparent;
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
+}
+
+.navbar-light .navbar-toggler {
+    border:orangered 2px solid;
+}
+
+.navbar-light .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='orangered' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+.classActive{
+    background-color: orangered !important;
+    color: white !important;
+}

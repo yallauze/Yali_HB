@@ -1,0 +1,60 @@
+<div *ngIf="isLoading">
+    <mat-spinner></mat-spinner>
+</div>
+<div *ngIf="!isLoading">
+
+    <!-- event binding -->
+    <button class="btn btn-danger" (click)="imgToggle()">
+        Click Sur moi pour my *ngIF
+    </button>
+    <br>
+    <!-- *ngIf tout simple -->
+    <img *ngIf="affichage" src="../../../assets/images/logo-MT.svg" alt="la montagne">
+
+    <!-- *ngIf avec then template et else template -->
+    <div *ngIf="condition; then thenBlock; else elseBlock"></div>
+    <ng-template #thenBlock>Content to render when condition is true.</ng-template>
+    <ng-template #elseBlock>Content to render when condition is false.</ng-template>
+
+    <!-- [ngSwitch] -->
+    <div [ngSwitch]="favoriTeam">
+        <img *ngSwitchCase="'ASM'" src="../../../assets/images/Logo_ASM_Clermont_Auvergne_2019.svg"
+            style="width: 150px; height: 50px;">
+        <img *ngSwitchCase="'RCT'" src="../../../assets/images/1200px-Logo_RC_Toulon_2015.svg"
+            style="width: 150px; height: 50px;">
+        <img *ngSwitchCase="'USAP'" src="../../../assets/images/usap-boutique113.svg"
+            style="width: 150px; height: 50px;">
+        <p *ngSwitchDefault>...</p>
+    </div>
+
+    <!-- *ngFor simple -->
+    <ol>
+        <li *ngFor="let city of cities"> {{city}} </li>
+    </ol>
+    <ul>
+        <li *ngFor="let city of cities; index as i"> {{i+1}} {{city}} </li>
+    </ul>
+
+    <div class="d-flex justify-content-around text-center">
+        <!-- *ngFor => passing each data to a child component -->
+        <div *ngFor="let cityArticle of cityArticles">
+
+            <!-- Above: Using datas from this component's class -->
+            <app-detail-article [dataPassingAttribute]="cityArticle" (childEvent)="childDataReceived = $event"
+                (childCounterEvent)="getVotes($event)" (isClickedEvent)="isClikedShow($event)"></app-detail-article>
+            <!-- Above: Passing each data to the child component selector as an attribute  -->
+
+        </div>
+    </div>
+
+    <!-- <h1> {{nbVotes}} </h1> -->
+    <div class="d-flex flex-column justify-content-center">
+        <h1> {{voteCounterTotal + " are the total votes for all articles"}} </h1>
+        <h1 class="YaliTest"> {{nbVotes}} </h1>
+        <h1> {{recievedClickedArticle}} haha </h1>
+    </div>
+
+    <div [style.background-color]="myColor">
+        this is to test my service
+    </div>
+</div>

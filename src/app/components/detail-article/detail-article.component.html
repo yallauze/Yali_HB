@@ -1,0 +1,13 @@
+<!-- <div class="card" style="width: 18rem;">
+    <img src="" class="card-img-top" [alt]="cityArticle.image">
+    <div class="card-body">
+        <h5 class="card-title"> {{ cityArticle.titre| uppercase}} </h5>
+        <p class="card-text"> {{ cityArticle.contenu }} </p>
+        <a href="#" class="btn btn-primary" (click)="voteCounter()">Go somewhere</a>
+        <div> {{counter}} </div>
+    </div>
+    <div> {{cityArticle | json}} </div>
+</div> -->
+<h5 class="card-title"> {{ cityArticle.titre| uppercase}} </h5>
+<button [routerLink]="['/cityArticle', cityArticle.id]" class="btn btn-primary">See full detail</button>
+<button (click)="goHomePage()">navigate</button>

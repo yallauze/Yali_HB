@@ -1,0 +1,39 @@
+<div class="container-fluid">
+    <h5>I am editing Article id: {{id}}</h5>
+    <form #articleEditForm="ngForm" novalidate (ngSubmit)="onConfirmEdit()">
+
+        <div class="form-group">
+            <label> Titre </label>
+            <input type="text" name="titre" #titre="ngModel" [(ngModel)]="editArticle.titre" class="form-control"
+                required [class.is-invalid]="titre.invalid && titre.touched">
+            <small *ngIf="titre.invalid && titre.touched" class="text-danger"> Titre is required </small>
+        </div>
+
+        <div class="form-group">
+            <label> Contenu </label>
+            <input type="text" name="contenu" #contenu="ngModel" [(ngModel)]="editArticle.contenu" class="form-control"
+                required [class.is-invalid]="contenu.invalid && contenu.touched">
+            <small *ngIf="contenu.invalid && contenu.touched" class="text-danger"> Contenu is required </small>
+        </div>
+
+        <div class="form-group">
+            <label> Image </label>
+            <input type="text" name="image" #image="ngModel" [(ngModel)]="editArticle.image" class="form-control"
+                required [class.is-invalid]="image.invalid && image.touched">
+            <small *ngIf="image.invalid && image.touched" class="text-danger"> Image is required </small>
+        </div>
+
+        <div class="form-group">
+            <select class="form-control" name="cat" required
+                    [(ngModel)]="editArticle.category" 
+                    #cat="ngModel" 
+                    [class.is-invalid]="cat.invalid && cat.touched">
+              <option selected value="" disabled> Choose a category: </option>
+              <option *ngFor="let categorie of categories" [value]="categorie"> {{ categorie }} </option>
+            </select>
+            <small class="text-danger" *ngIf="cat.invalid && cat.touched">Category is required</small>
+          </div> 
+
+        <input type="submit" value="ConfirmEdit" class="btn btn-primary" [disabled]="articleEditForm.invalid">
+    </form>
+</div>
